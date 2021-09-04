@@ -1,0 +1,23 @@
+
+<div class="form-group row d-flex justify-content-center animated fadeIn" >
+
+    <div class="card m-3 border-success" style="width: 18rem;" *ngFor="let brand of brands">
+
+        <div class="card-header">
+            <h4 class="card-title" style="text-align: center;">{{ brand.nombre }}</h4>
+            <h5 class="card-subtitle text-muted" style="text-align: center;">{{ brand.apellidos }}</h5>
+        </div>
+        
+        <div class="card-body">
+            <p class="card-text">Domicilio: {{ brand.domicilio }}</p>
+            <p class="card-text">Estado: {{ brand.estado }}</p>
+            <p class="card-text">Ciudad: {{ brand.ciudad}}</p>
+        </div>
+
+        <h6 class="card-subtitle m-2 text-muted">Fecha de nacimiento: {{brand.fechaNacimiento}}</h6>
+
+        <div class="card-footer bg-transparent border-success">
+            <p  class="card-link text-info" style="text-align: center;">Usuario-dni: {{brand.dni}}</p>
+        </div>
+    </div>
+</div>

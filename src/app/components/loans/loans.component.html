@@ -1,0 +1,56 @@
+<div class="d-flex justify-content-center">
+    <h3>Solicitud de prestamo</h3>
+</div>
+<hr style="border-color: black">
+
+<div class="container">
+    <form [formGroup]="form" (submit)="enviarData()">
+        <label for="">Id de libro:</label>
+        <input formControlName="idLibro" type="number" class="form-control" max="19" min="1" required>
+    
+        <label for="">Id de Usuario:</label>
+        <input formControlName="idUsuario" type="number" class="form-control" max="20" min="1" required>
+
+        <label for="">Fecha de salida:</label>
+        <input formControlName="fechaSalida" type="date" class="form-control" required>
+    
+        <label for="">Fecha maxima de devolucion:</label>
+        <input formControlName="fechaMaxima" type="date" class="form-control" required>
+    
+        <label for="">Fecha de devolucion:</label>
+        <input formControlName="fechaDevo" type="date" class="form-control" required>
+        
+        <div class="bnt-container">
+            <button class="btn btn-warning">Aceptar</button>
+        </div>
+    </form>
+</div>
+
+<hr style="border-color: black">
+
+<div class="d-flex justify-content-center">
+    <h3>Prestamos activos</h3>
+</div>
+
+<div class="form-group row d-flex justify-content-center animated fadeIn" >
+
+    <div class="card m-3 border-info" style="width: 18rem;" *ngFor="let brand of brands"> 
+
+        <div class="card-header">
+            <h4 class="card-title" style="text-align: center;" >Prestamo: {{brand.id}}</h4>
+        </div>
+        
+        <div class="card-body">
+
+            <h5 class="card-subtitle mb-3 text-muted" style="text-align: center;">Libro</h5>
+            <p class="card-text mt-4">Id del libro: {{brand.idLibro}}</p>
+            <p class="card-text">Id usuario: {{brand.idUsuario}}</p>
+            <p class="card-text">Fecha de salida: {{brand.fechaSalida}}</p>
+            <p class="card-text">Fecha de entrega maxima: {{brand.fechaMaxima}}</p>
+            <p class="card-text">Fecha de devolucion: {{brand.fechaDevo}}</p>
+
+        </div>
+
+    </div>
+
+</div>

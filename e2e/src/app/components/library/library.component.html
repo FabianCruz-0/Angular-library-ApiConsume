@@ -1,0 +1,31 @@
+
+<div class="form-group row d-flex justify-content-center animated fadeIn" >
+
+    <div class="card m-3 border-info" style="width: 18rem;" *ngFor="let brand of brands">
+
+        <div class="card-header">
+            <h4 class="card-title" style="text-align: center;" >{{brand.nombre}}</h4>
+        </div>
+        
+        <div class="card-body">
+
+            <h5 class="card-subtitle mb-3 text-muted" style="text-align: center;">Autor: {{ brand.autor }}</h5>
+            <p class="card-text mt-4">Genero: {{brand.genero}}</p>
+            <p class="card-text">Pais: {{brand.pais}}</p>
+            <p class="card-text">Num. de paginas: {{brand.numPaginas}}</p>
+            <p class="card-text">Año: {{brand.anoEdicion}}</p>
+            <p class="card-text">Precio: ${{brand.precio}}</p>
+
+        </div>
+
+        <h6 class="card-subtitle m-2 text-muted">Editorial: {{ brand.editorial }}</h6>
+
+        <div class="card-footer bg-transparent border-info"  *ngIf="state == 'disponible'">
+            <p  class="card-link text-primary" style="text-align: center;" >Disponibilidad: En Stock</p>
+        </div>
+        <div class="card-footer bg-transparent border-info"  *ngIf="state == 'noDisponible'">
+            <p  class="card-link text-danger" style="text-align: center;" >Disponibilidad: Agotado</p>
+        </div>
+    </div>'
+
+</div>
